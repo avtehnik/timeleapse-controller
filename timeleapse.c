@@ -47,12 +47,11 @@ int main(void){
 
 		while(time>0){
 			if((PIND & (1<<PIND7))==(1<<PIND7)){
-				//PORTB = time;
 				time--;
 				_delay_ms(1000);
 				if(time==0){
 					PORTB|=(1<<PORTB6);
-					_delay_ms(50);
+					_delay_ms(100);
 					PORTB&=~(1<<PORTB6);
 				}else{
 					PORTB&=~(1<<PORTB6);
